@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+<div>
+	<p>The body</p>
+	<p>Text here from home page</p>
+
+	{{text}}
+
+	{% for question in questions %}
+	<p style="text-transform: uppercase;">{{items}}</p>
+	{% include 'personal/snippets/body_snippets.html' with value=question %}
+	{% endfor %}
+
+
+</div>
+
+{% endblock content %}
