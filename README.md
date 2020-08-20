@@ -1,5 +1,5 @@
 
-## How to run the 
+## How to run the app 
 - clone to local repo
 - create a virtual env 
 
@@ -13,6 +13,7 @@
 - Make migrations `python manage.py makemigrations`
 - Then run Migrate `python manage.py migrate`
 - Run app `python manage.py runserver`
+
 
 
 
