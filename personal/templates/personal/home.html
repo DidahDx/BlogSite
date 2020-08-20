@@ -8,9 +8,9 @@
 
 	{{text}}
 
-	{% for question in questions %}
-	<p style="text-transform: uppercase;">{{items}}</p>
-	{% include 'personal/snippets/body_snippets.html' with value=question %}
+	{% for account in accounts %}
+	<p style="text-transform: uppercase;">{{account}}</p>
+	<!-- {% include 'personal/snippets/body_snippets.html' with value=question %} -->
 	{% endfor %}
 
 

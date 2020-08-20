@@ -1,17 +1,18 @@
 
 ## How to run the app 
-- clone to local repo
-- create a virtual env 
+- Clone to local repo
+- Change directory to repo `cd BlogSite`
+- Create a virtual env 
 
  ```
  python3 -m venv env 
  source env/bin/activate
-
  ```
 
 - Install app requirements `pip install -r requirements.txt`
 - Make migrations `python manage.py makemigrations`
 - Then run Migrate `python manage.py migrate`
+- Create user for admin `python manage.py createsuperuser`
 - Run app `python manage.py runserver`
 
 
