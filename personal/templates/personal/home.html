@@ -2,15 +2,12 @@
 
 {%  block content %}
 
-<div>
-
-<h3>Registered users:</h3>
-	{% for account in accounts %}
-	<p style="text-transform: uppercase;">{{account}}</p>
-	<!-- {% include 'personal/snippets/body_snippets.html' with value=question %} -->
-	{% endfor %}
-
-
+<div class="container">
+	<div class="d-flex flex-column">
+		<h4>Registered users:</h1>
+		{% for user in accounts %}
+			<p>{{user}}</p>
+		{% endfor %}
+	</div>
 </div>
-
 {% endblock content %}
