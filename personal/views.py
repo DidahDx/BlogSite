@@ -4,10 +4,10 @@ from account.models import Account
 
 
 # Create your views here.
-def home(request):
-# 	# print(request.headers)
-	context={}
-	account=Account.objects.all()
-	context['accounts']=account
+def home_screen_view(request):
+	
+	context = {}
+	accounts = Account.objects.all()
+	context['accounts'] = accounts
 
-	return render(request, "personal/home.html",context)
+	return render(request, "personal/home.html", context)

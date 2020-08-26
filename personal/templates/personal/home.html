@@ -3,11 +3,8 @@
 {%  block content %}
 
 <div>
-	<p>The body</p>
-	<p>Text here from home page</p>
 
-	{{text}}
-
+<h3>Registered users:</h3>
 	{% for account in accounts %}
 	<p style="text-transform: uppercase;">{{account}}</p>
 	<!-- {% include 'personal/snippets/body_snippets.html' with value=question %} -->
