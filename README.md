@@ -20,3 +20,5 @@
 
 add app to installed apps in settings
 snippets are reused views
+
+- to push static files to cdn network `python manage.py collectstatic`
