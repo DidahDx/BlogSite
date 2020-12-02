@@ -45,7 +45,7 @@
 			<!-- Top 'create post' bar -->
 			<div class="d-lg-none mb-3">
 				<div class="card m-auto d-flex flex-column p-3">
-					<img class="img-fluid d-block m-auto pb-2" src="{% static 'codingwithmitch_logo.png' %}" width="72" height="72">
+					<img class="img-fluid d-block m-auto pb-2" src="https://codingwithmitch.s3.amazonaws.com/static/model-view-intent-mvi-architecture/images/Model_View_Intent_MVI_Introduction_Course.png" width="72" height="72">
 					<p class="lead">In this course you'll learn how to build a simple blog with user registration and blog CRUD functionality. Django is a powerful 
 	  					framework and you'll see why in this course.</p>
 					<p class="m-auto"><a class="btn btn-primary" href="{% url 'blog:create' %}">Create post</a></p>
@@ -54,11 +54,19 @@
 			<!-- end Top 'create post' bar -->
 
 			<!-- Blog posts-->
-			{% for post in blog_posts %}
+				<!-- Blog posts-->
+			{% if blog_posts %}
+				{% for post in blog_posts %}
+					<div class="blog-post-container">
+						{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}
+					</div>
+				{% endfor %}
+			{% else %}
 				<div class="blog-post-container">
-					{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}
+					{% include 'blog/snippets/blog_post_snippet.html' with query=query %}
 				</div>
-			{% endfor %}
+			{% endif %}
+			<!-- End Blog posts-->
 			<!-- End Blog posts-->
 		</div>
 		<!-- end blog feed -->
@@ -68,7 +76,7 @@
 		<div class="right-column col-lg-3 d-lg-flex d-none flex-column">
 
 			<div class="card create-post-bar d-flex flex-column p-3">
-				<img class="img-fluid d-block m-auto pb-2" src="{% static 'codingwithmitch_logo.png' %}" width="72" height="72">
+				<img class="img-fluid d-block m-auto pb-2" src="https://codingwithmitch.s3.amazonaws.com/static/model-view-intent-mvi-architecture/images/Model_View_Intent_MVI_Introduction_Course.png" width="72" height="72">
 				<p class="lead">In this course you'll learn how to build a simple blog with user registration and blog CRUD functionality. Django is a powerful 
   					framework and you'll see why in this course.</p>
 				<p class="m-auto"><a class="btn btn-primary" href="{% url 'blog:create' %}">Create post</a></p>
