@@ -3,6 +3,7 @@ from django.db.models import Q
 from blog.models import BlogPost
 from blog.forms import CreateBlogPostForm,UpdateBlogPost
 from account.models import Account
+from django.http import HttpResponse
 
 # Create your views here.
 def create_blog_view(request):
@@ -39,6 +40,9 @@ def edit_blog_view(request,slug):
 		return render("must_authenticate")
 	
 	blog_post=get_object_or_404(BlogPost,slug=slug)
+
+	if blog_post.author!=user:
+		return HttpResponse("You are the author")
 
 	if request.POST:
 		form=UpdateBlogPost(request.POST or None,request.FILES or None, instance=blog_post)
